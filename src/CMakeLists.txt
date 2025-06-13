@@ -403,6 +403,7 @@ list(APPEND SOURCE_FILES
         displayapp/widgets/PageIndicator.cpp
         displayapp/widgets/DotIndicator.cpp
         displayapp/widgets/StatusIcons.cpp
+        displayapp/widgets/Flower.cpp
 
         ## Settings
         displayapp/screens/settings/QuickSettings.cpp
@@ -423,6 +424,7 @@ list(APPEND SOURCE_FILES
         ## Watch faces
         displayapp/screens/WatchFaceAnalog.cpp
         displayapp/screens/WatchFaceDigital.cpp
+        displayapp/screens/WatchFaceGarden.cpp
         displayapp/screens/WatchFaceInfineat.cpp
         displayapp/screens/WatchFaceTerminal.cpp
         displayapp/screens/WatchFacePineTimeStyle.cpp
