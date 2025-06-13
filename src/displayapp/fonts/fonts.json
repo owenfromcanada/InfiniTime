@@ -51,7 +51,7 @@
             "range": "0x30-0x3a"
          }
       ],
-      "bpp": 1,
+      "bpp": 4,
       "size": 82
    },
    "open_sans_light": {
