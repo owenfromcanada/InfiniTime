@@ -85,24 +85,24 @@ WatchFaceGarden::WatchFaceGarden(Controllers::DateTime& dateTimeController,
 
   label_time_colon = lv_label_create(garden, nullptr);
   lv_label_set_text(label_time_colon, ":");
-  lv_obj_set_style_local_text_font(label_time_colon, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &jetbrains_mono_extrabold_compressed);
-  lv_obj_align(label_time_colon, garden, LV_ALIGN_IN_TOP_MID, 0, 7);
+  lv_obj_set_style_local_text_font(label_time_colon, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &azeret_mono);
+  lv_obj_align(label_time_colon, garden, LV_ALIGN_IN_TOP_MID, 0, 10);
 
   label_time_hour = lv_label_create(garden, nullptr);
-  lv_obj_set_style_local_text_font(label_time_hour, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &jetbrains_mono_extrabold_compressed);
-  lv_obj_align(label_time_hour, label_time_colon, LV_ALIGN_OUT_LEFT_MID, 5, 0);
+  lv_obj_set_style_local_text_font(label_time_hour, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &azeret_mono);
+  lv_obj_align(label_time_hour, label_time_colon, LV_ALIGN_OUT_LEFT_MID, 15, 0);
 
   label_time_min = lv_label_create(garden, nullptr);
-  lv_obj_set_style_local_text_font(label_time_min, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &jetbrains_mono_extrabold_compressed);
-  lv_obj_align(label_time_min, label_time_colon, LV_ALIGN_OUT_RIGHT_MID, -5, 0);
+  lv_obj_set_style_local_text_font(label_time_min, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &azeret_mono);
+  lv_obj_align(label_time_min, label_time_colon, LV_ALIGN_OUT_RIGHT_MID, -15, 0);
 
 
   label_date = lv_label_create(garden, nullptr);
-  lv_obj_align(label_date, garden, LV_ALIGN_IN_TOP_LEFT, 0, 75);
+  lv_obj_align(label_date, garden, LV_ALIGN_IN_TOP_LEFT, 4, 75);
 
   temperature = lv_label_create(garden, nullptr);
   lv_label_set_text(temperature, "");
-  lv_obj_align(temperature, garden, LV_ALIGN_IN_TOP_RIGHT, 0, 75);
+  lv_obj_align(temperature, garden, LV_ALIGN_IN_TOP_RIGHT, -4, 75);
 
   weatherIcon = lv_label_create(garden, nullptr);
   lv_obj_set_style_local_text_font(weatherIcon, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &fontawesome_weathericons);
