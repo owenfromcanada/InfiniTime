@@ -44,6 +44,16 @@
       "bpp": 1,
       "size": 80
    },
+   "azeret_mono": {
+      "sources": [
+         {
+            "file": "AzeretMono-Regular.ttf",
+            "range": "0x30-0x3a"
+         }
+      ],
+      "bpp": 4,
+      "size": 82
+   },
    "open_sans_light": {
       "sources": [
          {
