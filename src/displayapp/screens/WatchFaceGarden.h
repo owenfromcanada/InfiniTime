@@ -13,8 +13,6 @@
 #include "utility/DirtyValue.h"
 #include "displayapp/apps/Apps.h"
 
-#define NUM_FLOWERS 5
-
 namespace Pinetime {
   namespace Controllers {
     class Settings;
@@ -45,8 +43,20 @@ namespace Pinetime {
         void Refresh() override;
 
       private:
-        uint8_t displayedHour = -1;
-        uint8_t displayedMinute = -1;
+        static const int NUM_FLOWERS = 5;
+        static const int NUM_STAGES = 6;
+        static const int GARDEN_WIDTH = 180;
+        static constexpr int X_POS_OFFSET = -GARDEN_WIDTH/2;
+        static constexpr int X_POS_STEP = GARDEN_WIDTH/(NUM_FLOWERS-1);
+
+        static constexpr uint32_t BG_COLORS[NUM_STAGES*2] = {
+          0x000000, 0x16004C,
+          0x080065, 0xC6B431,
+          0x00539C, 0xABDFFF,
+          0x2D7DFF, 0x87BBFF,
+          0x2D7DFF, 0x87BBFF,
+          0x090463, 0xBB112D
+        };
 
         Utility::DirtyValue<std::chrono::time_point<std::chrono::system_clock, std::chrono::minutes>> currentDateTime {};
         Utility::DirtyValue<uint32_t> stepCount {};
@@ -56,7 +66,6 @@ namespace Pinetime {
         Utility::DirtyValue<std::optional<Pinetime::Controllers::SimpleWeatherService::CurrentWeather>> currentWeather {};
         Utility::DirtyValue<int> stage {};
         Utility::DirtyValue<int> seed {};
-
         Utility::DirtyValue<std::chrono::time_point<std::chrono::system_clock, std::chrono::days>> currentDate;
 
         lv_obj_t* garden;

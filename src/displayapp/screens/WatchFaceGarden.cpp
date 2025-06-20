@@ -1,7 +1,6 @@
 #include "displayapp/screens/WatchFaceGarden.h"
 
 #include <lvgl/lvgl.h>
-#include <cstdio>
 
 #include "displayapp/screens/NotificationIcon.h"
 #include "displayapp/screens/Symbols.h"
@@ -15,20 +14,6 @@
 #include "components/settings/Settings.h"
 
 using namespace Pinetime::Applications::Screens;
-
-#define NUM_STAGES 6
-#define GARDEN_WIDTH 180
-#define X_POS_OFFSET (-GARDEN_WIDTH/2)
-#define X_POS_STEP (GARDEN_WIDTH/(NUM_FLOWERS-1))
-
-const uint32_t BG_COLORS[NUM_STAGES*2] = {
-  0x000000, 0x16004C,
-  0x080065, 0xC6B431,
-  0x00539C, 0xABDFFF,
-  0x2D7DFF, 0x87BBFF,
-  0x2D7DFF, 0x87BBFF,
-  0x090463, 0xBB112D
-};
 
 WatchFaceGarden::WatchFaceGarden(Controllers::DateTime& dateTimeController,
                                  const Controllers::Battery& batteryController,
