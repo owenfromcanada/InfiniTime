@@ -90,11 +90,15 @@ WatchFaceGarden::WatchFaceGarden(Controllers::DateTime& dateTimeController,
 
   label_time_hour = lv_label_create(garden, nullptr);
   lv_obj_set_style_local_text_font(label_time_hour, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &azeret_mono);
-  lv_obj_align(label_time_hour, label_time_colon, LV_ALIGN_OUT_LEFT_MID, 15, 0);
+  lv_obj_align(label_time_hour, label_time_colon, LV_ALIGN_OUT_LEFT_MID, 12, 0);
 
   label_time_min = lv_label_create(garden, nullptr);
   lv_obj_set_style_local_text_font(label_time_min, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &azeret_mono);
-  lv_obj_align(label_time_min, label_time_colon, LV_ALIGN_OUT_RIGHT_MID, -15, 0);
+  lv_obj_align(label_time_min, label_time_colon, LV_ALIGN_OUT_RIGHT_MID, -12, 0);
+
+  label_time_ampm = lv_label_create(garden, nullptr);
+  lv_label_set_text(label_time_ampm, "");
+  lv_obj_align(label_time_ampm, label_time_colon, LV_ALIGN_IN_TOP_MID, 0, -7);
 
 
   label_date = lv_label_create(garden, nullptr);
@@ -169,6 +173,8 @@ void WatchFaceGarden::Refresh() {
     }
 
     if (settingsController.GetClockType() == Controllers::Settings::ClockType::H12) {
+      lv_label_set_text(label_time_ampm, (hour >= 12 ? "PM" : "AM"));
+
       if (hour == 0) {
         hour = 12;
       } else if (hour > 12) {
@@ -184,6 +190,7 @@ void WatchFaceGarden::Refresh() {
     }
     lv_obj_align(label_time_colon, garden, LV_ALIGN_IN_TOP_MID, offset, 7);
     lv_obj_realign(label_time_hour);
+    lv_obj_realign(label_time_ampm);
 
     lv_label_set_text_fmt(label_time_min, "%02d", minute);
     lv_obj_realign(label_time_min);
