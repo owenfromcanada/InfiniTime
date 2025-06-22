@@ -14,9 +14,9 @@
             "range": "0x1D378"
          }
       ],
-      "bpp": 1,
+      "bpp": 4,
       "size": 20,
-      "patches": ["jetbrains_mono_bold_20.c_zero.patch", "jetbrains_mono_bold_20.c_M.patch"]
+      "patches": ["jetbrains_mono_bold_20.c_zero.patch"]
    },
    "jetbrains_mono_42": {
       "sources": [
@@ -75,7 +75,7 @@
             "range": "0xf00b, 0xe3aa-0xe3ac, 0xe7f6-0xe7f7, 0xe8b8, 0xef44, 0xe40a"
          }
       ],
-      "bpp": 1,
+      "bpp": 4,
       "size": 48
    },
    "fontawesome_weathericons": {
@@ -85,7 +85,7 @@
             "range": "0xf185, 0xf6c4, 0xf743, 0xf740, 0xf75f, 0xf0c2, 0xf05e, 0xf73b, 0xf0e7, 0xf2dc"
          }
       ],
-      "bpp": 1,
+      "bpp": 4,
       "size": 25
    }
 }
